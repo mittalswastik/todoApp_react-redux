@@ -1,14 +1,14 @@
 import {combineReducers} from 'redux';
 import {types} from './action.js';
 
-const list = [];
+const list = {};
 
 const todoReducer = (state=list, action) => {
 	switch(action.types){
 		case 'ADD_TODO':
 			list.concat(actio.payload.data);
 			return {
-				...state,list
+				...state,...list
 			};
 		break;
 		/*case 'DELETE_TODO':;
@@ -18,8 +18,8 @@ const todoReducer = (state=list, action) => {
 	}
 }
 
-const root = combineReducers({
+const rootReducer = combineReducers({
 	todoState: todoReducer, 
 });
 
-export default root;
+export default rootReducer;

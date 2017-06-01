@@ -8,19 +8,19 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 	}
-   
-    add = (event) => {
-   	  event.preventDefault();
-   	  const value = this.refs.val.getValue();
-   	  this.props.addTodo(value);
-    }
-
+    
+    onAddTodo = () => {
+    	event.preventDefault();
+	   	const value = this.refs.val.getValue();
+   		this.props.addTodo(value);
+	}
+    
     render() {
       return (
         <div>
 	        <Todolist/>
 	     	<input type="text" className="newtodo" refs="val"/>
-	        <button onclick={this.add}>Add Todo</button>
+	        <button onclick={this.onAddTodo}>Add Todo</button>
         </div>
       );
     }
